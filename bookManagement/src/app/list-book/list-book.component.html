@@ -1,0 +1,25 @@
+<div class="row">
+  <h1 *ngIf="listBook">Có {{ listBook.length }} cuốn sách</h1>
+  <a class="btn btn-success"  href="create">Thêm sách mới</a>
+</div>
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên sách</th>
+      <th scope="col">Tác giả</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of listBook ">
+      <th scope="row">{{ book.id }}</th>
+      <td><a class="action-link" [routerLink]="['/view', book.id]">{{ book.title }}</a></td>
+      <td>{{ book.author }}</td>
+      <td>
+        <a class="action-link" [routerLink]="['/edit', book.id]">Sửa</a> | <a class="action-link"
+          [routerLink]="['/delete', book.id]">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

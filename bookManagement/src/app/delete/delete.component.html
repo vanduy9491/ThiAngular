@@ -1,0 +1,25 @@
+<div *ngIf="bookDetails">
+  <h2>Chi tiết sách</h2>
+  <table>
+    <tr>
+      <td>Tên sách</td>
+      <td>{{ bookDetails.title }}</td>
+    </tr>
+    <tr>
+      <td>Tác giả</td>
+      <td>{{ bookDetails.author }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">Mô tả</td>
+    </tr>
+    <tr>
+      <td colspan="2">{{ bookDetails.description}}</td>
+    </tr>
+  </table>
+</div>
+<div>
+  <a class="action-link btn btn-danger" [routerLink]="['/delete', bookDetails.id]">Xóa sạch</a>
+  <a class="action-link btn btn-warning" [routerLink]="['/list']">Thoát</a>
+
+</div>
+

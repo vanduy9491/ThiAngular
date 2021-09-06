@@ -1,0 +1,21 @@
+<div *ngIf="bookDetails">
+  <h2>Chi tiết sách</h2>
+  <a class="action-link" [routerLink]="['/list']">Quay lại danh sách</a>
+
+  <table>
+    <tr>
+      <td>Tên sách</td>
+      <td>{{ bookDetails.title }}</td>
+    </tr>
+    <tr>
+      <td>Tác giả</td>
+      <td>{{ bookDetails.author }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">Mô tả</td>
+    </tr>
+    <tr>
+      <td colspan="2">{{ bookDetails.description}}</td>
+    </tr>
+  </table>
+</div>

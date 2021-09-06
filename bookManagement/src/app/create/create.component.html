@@ -1,0 +1,26 @@
+<form [formGroup]="createForm" (ngSubmit)="addBook()">
+  <div class="form-group">
+    <label for="name">Tên sách</label>
+    <input type="text" class="form-control" formControlName='title' id="title" placeholder="Input name">
+    <span class="text-danger"
+      *ngIf="createForm?.controls?.name?.dirty && createForm && createForm?.controls?.name?.errors">
+      {{ createForm?.controls?.title?.errors?.required ? "This field is required" : "Name must less or equals than 30"
+      }}
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="price">Tác giả</label>
+    <input type="text" class="form-control" formControlName='author' id="author">
+    <span class="text-danger" *ngIf="createForm?.controls?.price?.dirty && createForm?.controls?.price?.errors">Price
+      value to be greater than or equal to 1</span>
+  </div>
+  <div class="form-group">
+    <label for="price">Mô tả</label>
+    <input type="text" class="form-control" formControlName='description' id="description">
+    <span class="text-danger" *ngIf="createForm?.controls?.price?.dirty && createForm?.controls?.price?.errors">Price
+      value to be greater than or equal to 1</span>
+  </div>
+  <button class="btn btn-primary d-block mt-4" type="submit">Create</button>
+  <a class="action-link btn btn-warning" [routerLink]="['/list']">Thoát</a>
+
+</form>
